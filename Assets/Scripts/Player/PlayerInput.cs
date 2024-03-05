@@ -4,10 +4,13 @@ using UnityEngine;
 [RequireComponent(typeof(PlayerMover))]
 public class PlayerInput : MonoBehaviour
 {
+    private KeyCode _shootKey = KeyCode.Mouse0;
+    private KeyCode _jumpKey = KeyCode.Space;
+
     private PlayerMover _playerMover;
     private PlayerShooting _playerShooting;
 
-    private void Start()
+    private void Awake()
     {
         _playerMover = GetComponent<PlayerMover>();
         _playerShooting = GetComponent<PlayerShooting>();
@@ -15,9 +18,9 @@ public class PlayerInput : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(_jumpKey))
             _playerMover.FlyUp();
-        else if (Input.GetKeyDown(KeyCode.Mouse0))
+        else if (Input.GetKeyDown(_shootKey))
             _playerShooting.ShootBullet();
     }
 }

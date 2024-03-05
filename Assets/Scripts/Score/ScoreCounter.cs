@@ -1,23 +1,23 @@
 using UnityEngine;
 
-[RequireComponent(typeof(DisplayScore))]
+[RequireComponent(typeof(ScoreView))]
 public class ScoreCounter : MonoBehaviour
 {
-    private DisplayScore _displayScore;
+    private ScoreView _scoreView;
     private int _score;
 
     public int Score => _score;
 
     private void Awake()
     {
-        _displayScore = GetComponent<DisplayScore>();
-        _displayScore.UpdateScoreText(_score);
+        _scoreView = GetComponent<ScoreView>();
+        _scoreView.UpdateScoreText(_score);
     }
 
     public void AddScore() 
     {
         _score++;
-        _displayScore.UpdateScoreText(_score);
+        _scoreView.UpdateScoreText(_score);
     } 
 
     public void ResetScore() => _score = 0;

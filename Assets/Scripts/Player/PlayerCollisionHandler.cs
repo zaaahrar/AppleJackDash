@@ -16,7 +16,6 @@ public class PlayerCollisionHandler : MonoBehaviour
             _player.Die();
 
         if (collision.TryGetComponent(out Border _))
-            _player.Die();
-            
+            _player.Die();          
     }
 }

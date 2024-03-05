@@ -22,8 +22,7 @@ public class PlayerMover : MonoBehaviour
         _minRotation = Quaternion.Euler(0, 0, MinRotationZ);
     }
 
-    private void Update() => transform.rotation =
-        Quaternion.Lerp(transform.rotation, _minRotation, _rotationSpeed * Time.deltaTime);
+    private void Update() => transform.rotation = Quaternion.Lerp(transform.rotation, _minRotation, _rotationSpeed * Time.deltaTime);
 
     public void FlyUp()
     {

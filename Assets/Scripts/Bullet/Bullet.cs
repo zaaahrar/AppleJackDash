@@ -14,7 +14,9 @@ public abstract class Bullet : MonoBehaviour
 
     public void Initialize(Vector3 direction, ObjectPool<Bullet> bulletPool)
     {
-         _direction = direction;
+        _direction = direction;
         _bulletPool = bulletPool;
     }
+
+    public void SubmitToPool(Bullet bullet) => _bulletPool.Release(bullet);
 }

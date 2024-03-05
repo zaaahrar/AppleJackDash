@@ -38,7 +38,7 @@ public class EnemySpawner : MonoBehaviour
             Enemy enemy = _enemyPool.Get();
             enemy.transform.position = spawnPoint;
             enemy.Initialize(_enemyPool, _scoreCounter);
-            StartCoroutine(DelayingSpawn());
+            StartCoroutine(SpawnDelayed());
         }
     }
 
@@ -52,7 +52,7 @@ public class EnemySpawner : MonoBehaviour
         return enemy;
     }
 
-    private IEnumerator DelayingSpawn()
+    private IEnumerator SpawnDelayed()
     {
         yield return _delay;
         _isSpawn = true;

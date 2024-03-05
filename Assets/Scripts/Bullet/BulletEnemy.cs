@@ -7,10 +7,10 @@ public class BulletEnemy : Bullet
         if (collision.TryGetComponent(out Player player))
         {
             player.Die();
-            BulletPool.Release(this);
+            SubmitToPool(this);
         }
 
         if (collision.TryGetComponent(out Border _))
-            BulletPool.Release(this);
+            SubmitToPool(this);
     }
 }
