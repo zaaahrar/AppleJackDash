@@ -20,8 +20,5 @@ public class ScoreCounter : MonoBehaviour
         _displayScore.UpdateScoreText(_score);
     } 
 
-    public void ResetScore()
-    {
-        _score = 0;
-    }
+    public void ResetScore() => _score = 0;
 }

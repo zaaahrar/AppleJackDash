@@ -2,10 +2,7 @@ using UnityEngine;
 
 public class EnemyShooting : Shoot
 {
-    private void Update()
-    {
-        ShootBullet();
-    }
+    private void Update() => ShootBullet();
 
     public override void ShootBullet()
     {
